@@ -1,6 +1,3 @@
-Ruby FMOD
----------
-
 This library wraps the excellent FMOD library.
 It is far from finished, but all the basic techniques for interfacing Ruby with the FMOD library are outlined. 
 
