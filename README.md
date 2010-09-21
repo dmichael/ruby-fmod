@@ -7,9 +7,9 @@ It is far from finished, but all the basic techniques for interfacing Ruby with 
 FMOD
 ----
 
-FMOD is a programming library and toolkit for the creation and playback of interactive audio. It supports all leading operating systems and game platforms. And now Ruby too.
+[FMOD](http://www.fmod.org) is a programming library and toolkit for the creation and playback of interactive audio. It supports all leading operating systems and game platforms. And now Ruby too.
 
-http://www.fmod.org
+
 
 
 Write some code!
