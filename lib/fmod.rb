@@ -1,3 +1,16 @@
+$:.unshift(File.join(File.dirname(__FILE__), 'fmod'))
+
+require 'rubygems'
+require 'ffi'
+
+require 'constants'
+require 'enums'
+require 'functions'
+         
+require 'system'
+require 'sound'
+require 'channel'
+
 module FMOD
   def self.init
     @system = System.new

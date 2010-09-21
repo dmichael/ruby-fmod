@@ -1,17 +1,4 @@
-$:.unshift(File.join(File.dirname(__FILE__), 'lib'))
-
-require 'rubygems'
-require 'ffi'
-
-require 'lib/constants'
-require 'lib/enums'
-require 'lib/functions'
-
 require 'lib/fmod'
-
-require 'lib/system'
-require 'lib/sound'
-require 'lib/channel'
 
 start_time = Time.now
 puts "initializing FMOD ..."
