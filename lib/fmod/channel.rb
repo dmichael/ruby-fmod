@@ -4,6 +4,7 @@ module FMOD
     # pointer to the channel instance
     attr_reader :pointer
     
+    # TODO: Need to find a way to reliably destroy this pointer
     def initialize(options = {})
       @system_pointer = FMOD.system.pointer
       @pointer = FFI::MemoryPointer.new(:pointer)

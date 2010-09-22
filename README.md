@@ -1,3 +1,16 @@
+Efficient, realtime audio for Ruby
+==================================
+
+Ruby is too slow to do realtime audio, but C is not. The best way to give Ruby robust audio capabilities is to use a native C/C++ library. The primary problem then is which library to choose and how to wire it into Ruby.
+
+So how do you choose an audio library? Aside from writing one from scratch, there are a number of widely used preexisting C/C++ audio libraries. At the lowest level, there are projects like PortAudio which handle direct interfacing with the hardware only, requiring a programmer to feed it a stream of numbers representing a waveform. At the highest level, projects like CLAM, CSL, FMOD and others provide a full framework complete with voice management, sound file playback, and even synthesis. In these frameworks, the low level number pushing is well abstracted, leaving the programmer with a coarse interface to predefined functionality.
+
+This Ruby library has chosen a high level framework as a basis for realtime audio. While it certainly is possible to get Ruby to push waveform representations to a low level API like PortAudio, doing so 44100 times a second is not playing to Ruby's strengths. By using a high level library, we trade flexible synthesis for a limited set of fast, efficient audio routines.
+
+To get Ruby to use external native libraries, there are a few ways to go about it. You can write a C external, use the DL library available in the Ruby standard distribution, or you can use FFI. Having tried all three methods of interfacing with C, FFI is a clear winner. It is efficient, predictable, effortlessly cross platform, and decently well documented.
+
+Ruby has been sorely lacking an audio framework, and an FMOD wrapper is a great place to start. This library is ultimately meant to be the basis of audio DSLs written in Ruby. 
+
 FMOD for Ruby
 -------------
 
@@ -28,15 +41,3 @@ Usage
   sound = FMOD::Sound.new(file)
   sound.play
 
-Efficient, realtime audio for Ruby
-==================================
-
-Ruby is too slow to do realtime audio, but C is not. The best way to give Ruby robust audio capabilities is to use a native C/C++ library. The primary problem then is which library to choose and how to wire it into Ruby.
-
-So how do you choose an audio library? Aside from writing one from scratch, there are a number of widely used preexisting C/C++ audio libraries. At the lowest level, there are projects like PortAudio which handle direct interfacing with the hardware only, requiring a programmer to feed it a stream of numbers representing a waveform. At the highest level, projects like CLAM, CSL, FMOD and others provide a full framework complete with voice management, sound file playback, and even synthesis. In these frameworks, the low level number pushing is well abstracted, leaving the programmer with a coarse interface to predefined functionality.
-
-This Ruby library has chosen a high level framework as a basis for realtime audio. While it certainly is possible to get Ruby to push waveform representations to a low level API like PortAudio, doing so 44100 times a second is not playing to Ruby's strengths. By using a high level library, we trade flexible synthesis for a limited set of fast, efficient audio routines.
-
-To get Ruby to use external native libraries, there are a few ways to go about it. You can write a C external, use the DL library available in the Ruby standard distribution, or you can use FFI. Having tried all three methods of interfacing with C, FFI is a clear winner. It is efficient, predictable, effortlessly cross platform, and decently well documented.
-
-Ruby has been sorely lacking an audio framework, and an FMOD wrapper is a great place to start. This library is ultimately meant to be the basis of audio DSLs written in Ruby. 
