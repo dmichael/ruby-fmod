@@ -1,4 +1,4 @@
-Efficient, realtime audio for Ruby
+<!-- Efficient, realtime audio for Ruby
 ==================================
 
 Ruby is too slow to do realtime audio, but C is not. The best way to give Ruby robust audio capabilities is to use a native C/C++ library. The primary problem then is which library to choose and how to wire it into Ruby.
@@ -9,7 +9,7 @@ This Ruby library has chosen a high level framework as a basis for realtime audi
 
 To get Ruby to use external native libraries, there are a few ways to go about it. You can write a C external, use the DL library available in the Ruby standard distribution, or you can use FFI. Having tried all three methods of interfacing with C, FFI is a clear winner. It is efficient, predictable, effortlessly cross platform, and decently well documented.
 
-Ruby has been sorely lacking an audio framework, and an FMOD wrapper is a great place to start. This library is ultimately meant to be the basis of audio DSLs written in Ruby. 
+Ruby has been sorely lacking an audio framework, and an FMOD wrapper is a great place to start. This library is ultimately meant to be the basis of audio DSLs written in Ruby.  -->
 
 FMOD for Ruby
 -------------
